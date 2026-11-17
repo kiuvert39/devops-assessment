@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+vendor/
+local-storage/
+tests/
+README.md
+docker-compose.yml

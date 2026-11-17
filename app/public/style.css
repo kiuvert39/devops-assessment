@@ -1,0 +1,10 @@
+:root { font-family: system-ui, sans-serif; color: #172033; background: #f5f7fb; }
+body { margin: 0; }
+main { max-width: 780px; margin: 3rem auto; padding: 0 1rem; }
+header { border-bottom: 1px solid #d8deea; margin-bottom: 1.5rem; }
+h1 { margin-bottom: .25rem; }.environment { color: #536075; }
+section { background: white; padding: 1.25rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 1px 2px #d8deea; }
+.status { display: flex; gap: 2rem; }.ok { color: #137333; font-weight: 700; }.fail, .error { color: #b3261e; }.notice { color: #137333; }
+form { display: grid; gap: .75rem; } button { width: fit-content; padding: .5rem 1rem; cursor: pointer; }
+table { border-collapse: collapse; width: 100%; } th, td { text-align: left; padding: .5rem; border-bottom: 1px solid #e3e7ee; }
+@media (max-width: 500px) { .status { display: grid; gap: .5rem; } }
