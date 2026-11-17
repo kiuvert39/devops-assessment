@@ -14,6 +14,8 @@ resource "google_cloud_run_v2_service" "application" {
       max_instance_count = 3
     }
 
+
+
     volumes {
       name = "cloudsql"
 
@@ -64,7 +66,7 @@ resource "google_cloud_run_v2_service" "application" {
       }
 
       env {
-        name  = "db_username"
+        name  = "DB_USERNAME"
         value = var.db_username
       }
 
@@ -106,5 +108,11 @@ resource "google_cloud_run_v2_service" "application" {
         failure_threshold     = 10
       }
     }
+  }
+  lifecycle {
+    ignore_changes = [
+      template[0].containers[0].image,
+      template[0].containers[1].image
+    ]
   }
 }

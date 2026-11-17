@@ -1,0 +1,14 @@
+project_id             = "YOUR_GCP_PROJECT_ID"
+region                 = "europe-west1"
+environment            = "dev"
+bucket_name            = "YOUR_UNIQUE_DEV_BUCKET_NAME"
+db_instance_name       = "assessment-dev-mysql"
+database_name          = "assessment_dev"
+db_username            = "assessment_user"
+cloud_run_service_name = "assessment-dev"
+load_balancer_name     = "assessment-dev-lb"
+
+nginx_image = "YOUR_ARTIFACT_REGISTRY_NGINX_IMAGE"
+php_image   = "YOUR_ARTIFACT_REGISTRY_PHP_IMAGE"
+
+db_tier = "db-f1-micro"
