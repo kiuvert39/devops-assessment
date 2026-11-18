@@ -1,3 +1,18 @@
+/*
+ * External HTTP Load Balancer
+ *
+ * Exposes the Cloud Run application through a stable public IP address.
+ *
+ * It provisions:
+ * - A reserved global IP address for the load balancer.
+ * - A serverless Network Endpoint Group (NEG) connected to Cloud Run.
+ * - A backend service that forwards traffic to the serverless NEG.
+ * - An HTTP forwarding rule and URL routing configuration.
+ *
+ * The load balancer acts as the public entry point for application traffic
+ * and routes requests to the Cloud Run service.
+ */
+
 resource "google_compute_global_address" "lb_ip" {
   name = "${var.name}-ip"
 }

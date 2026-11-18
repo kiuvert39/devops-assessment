@@ -1,3 +1,21 @@
+/*
+ * Cloud Run Service
+ *
+ * Deploys the application as a multi-container Cloud Run service.
+ *
+ * The service contains two containers:
+ * - Nginx: Handles incoming HTTP requests and serves static files.
+ * - PHP-FPM: Executes PHP application code and communicates with
+ *   Cloud SQL and Cloud Storage.
+ *
+ * Nginx forwards PHP requests to PHP-FPM over localhost:9000.
+ * Both containers share the Cloud Run instance's network namespace.
+ *
+ * The configuration also defines service scaling, Cloud SQL connectivity,
+ * runtime environment variables, and application resource limits.
+ */
+
+
 resource "google_cloud_run_v2_service" "application" {
   name     = var.service_name
   location = var.region

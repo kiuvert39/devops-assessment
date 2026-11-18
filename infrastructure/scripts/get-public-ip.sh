@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+# Load Balancer Public IP Retrieval
+#
+# Retrieves the global frontend IP address of the Google Cloud
+# external HTTP Load Balancer for the selected environment.
+#
+# Features:
+# - Supports dev and prod environments.
+# - Reads project IDs from environment variables.
+# - Allows custom Load Balancer address names.
+# - Checks environment arguments, gcloud availability,
+#   and Google Cloud authentication.
+# - Handles errors and logs execution details.
+#
+# Usage: ./get-public-ip.sh <dev|prod>
+
+
 set -Eeuo pipefail
 
 # Usage: ./get-public-ip.sh <dev|prod>

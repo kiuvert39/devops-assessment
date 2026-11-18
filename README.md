@@ -87,12 +87,19 @@ docker compose -f app/docker-compose.yml down
 ## Project Structure
 
 ```text
+## Project Structure
+
 .
 ├── app/                  # PHP application and Docker configuration
 ├── infrastructure/
-│   ├── terraform/        # Terraform configuration and modules
+│   ├── terraform/
+│   │   ├── bootstrap/    # Creates the Terraform remote state bucket
+│   │   ├── modules/      # Reusable infrastructure modules
+│   │   ├── environments/ # Environment-specific variable examples
+│   │   └── *.tf          # Root Terraform configuration
 │   └── scripts/          # Utility scripts
-├── .github/workflows/    # CI/CD workflows
+├── .github/
+│   └── workflows/        # CI/CD workflows
 └── README.md
 ```
 

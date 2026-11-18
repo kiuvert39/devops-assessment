@@ -1,3 +1,21 @@
+
+/*
+ * Main Infrastructure Configuration
+ *
+ * This file orchestrates the deployment of the application infrastructure
+ * on Google Cloud using reusable Terraform modules.
+ *
+ * It provisions:
+ * - Cloud Storage for application file uploads.
+ * - Cloud SQL (MySQL) for application data.
+ * - Cloud Run to host the Nginx and PHP-FPM containers.
+ * - An external HTTP Load Balancer to route incoming traffic to Cloud Run.
+ * - Artifact Registry to store application container images.
+ *
+ * The root configuration also connects these modules with the required
+ * service accounts, IAM permissions, and application configuration.
+ */
+ 
 module "storage" {
   source = "./modules/storage"
 

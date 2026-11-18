@@ -1,3 +1,19 @@
+/*
+ * Identity and Access Management (IAM)
+ *
+ * This configuration defines the permissions required by the application
+ * to interact securely with Google Cloud services.
+ *
+ * It:
+ * - Creates a dedicated service account for Cloud Run.
+ * - Grants access to Cloud SQL and Cloud Storage.
+ * - Allows the application to retrieve the database password from Secret Manager.
+ * - Configures public invocation of the Cloud Run service through IAM.
+ *
+ * Using a dedicated service account avoids relying on broad default
+ * project permissions for the application.
+ */
+
 resource "google_service_account" "cloud_run" {
   account_id   = "cloud-run-${var.environment}"
   display_name = "Cloud Run Service Account"
