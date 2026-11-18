@@ -278,6 +278,22 @@ The script only retrieves the existing Load Balancer IP. It does not provision o
 
 Live IP retrieval requires a deployed Google Cloud Load Balancer.
 
+## Implementation Limitations
+
+The application containers were built and tested locally using Docker Compose.
+
+The Terraform configuration was formatted and validated locally. However,
+live infrastructure provisioning and deployment could not be verified
+because Google Cloud access was unavailable during the assessment.
+
+Consequently, the following remain unverified:
+- Cloud SQL provisioning and application connectivity.
+- Cloud Storage integration.
+- Cloud Run deployment.
+- External HTTP Load Balancer routing.
+- GitHub Actions deployment to Cloud Run.
+- Live Load Balancer IP retrieval.
+
 ## Implementation Status
 
 - [x] PHP application containerization
